@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Panel de trabajo para domiciliarios LogiSIS"
+    >
+
+    <title>LogiSIS - Panel del domiciliario</title>
+
+    <!-- =========================================================
+         FUENTE
+         ========================================================= -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =========================================================
+         CSS DEL PANEL
+         ========================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="css/domiciliario.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =========================================================
+         CONTENEDOR PRINCIPAL
+         ========================================================= -->
+
+    <div class="app-domiciliario">
+
+
+        <!-- =====================================================
+             BARRA LATERAL
+             ===================================================== -->
+
+        <aside
+            id="barraLateral"
+            class="barra-lateral"
+        >
+
+            <!-- LOGO -->
+
+            <div class="logo-panel">
+
+                <div class="logo-texto">
+
+                    <span class="logo-logi">
+                        Logi
+                    </span>
+
+                    <span class="logo-sis">
+                        SIS
+                    </span>
+
+                </div>
+
+                <span class="logo-subtitulo">
+                    PANEL DOMICILIARIO
+                </span>
+
+            </div>
+
+
+            <!-- PERFIL DEL USUARIO -->
+
+            <div class="perfil-sidebar">
+
+                <div
+                    id="avatarSidebar"
+                    class="avatar"
+                >
+                    D
+                </div>
+
+                <div class="perfil-info">
+
+                    <strong id="nombreSidebar">
+                        Domiciliario
+                    </strong>
+
+                    <span id="rolSidebar">
+                        Domiciliario
+                    </span>
+
+                </div>
+
+                <span
+                    id="estadoSidebar"
+                    class="estado-indicador"
+                    title="Estado disponible"
+                ></span>
+
+            </div>
+
+
+            <!-- NAVEGACIÓN -->
+
+            <nav class="navegacion-panel">
+
+                <p class="titulo-menu">
+                    MENÚ PRINCIPAL
+                </p>
+
+
+                <button
+                    type="button"
+                    class="item-menu activo"
+                    data-seccion="inicio"
+                >
+
+                    <span class="icono-menu">
+                        🏠
+                    </span>
+
+                    <span>
+                        Inicio
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="item-menu"
+                    data-seccion="pedidos"
+                >
+
+                    <span class="icono-menu">
+                        📦
+                    </span>
+
+                    <span>
+                        Mis pedidos
+                    </span>
+
+                    <span
+                        id="contadorPedidosMenu"
+                        class="contador-menu"
+                    >
+                        0
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="item-menu"
+                    data-seccion="ruta"
+                >
+
+                    <span class="icono-menu">
+                        🚚
+                    </span>
+
+                    <span>
+                        Mi ruta
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="item-menu"
+                    data-seccion="historial"
+                >
+
+                    <span class="icono-menu">
+                        🕘
+                    </span>
+
+                    <span>
+                        Historial
+                    </span>
+
+                </button>
+
+
+                <p class="titulo-menu titulo-menu-secundario">
+                    MI CUENTA
+                </p>
+
+
+                <button
+                    type="button"
+                    class="item-menu"
+                    data-seccion="perfil"
+                >
+
+                    <span class="icono-menu">
+                        👤
+                    </span>
+
+                    <span>
+                        Mi perfil
+                    </span>
+
+                </button>
+
+
+            </nav>
+
+
+            <!-- PARTE INFERIOR -->
+
+            <div class="sidebar-inferior">
+
+                <div class="soporte-sidebar">
+
+                    <span class="soporte-icono">
+                        ?
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            ¿Necesitas ayuda?
+                        </strong>
+
+                        <small>
+                            Contacta soporte LogiSIS
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="botonCerrarSesion"
+                    class="boton-cerrar"
+                >
+
+                    <span>
+                        ↪
+                    </span>
+
+                    Cerrar sesión
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             CONTENIDO PRINCIPAL
+             ===================================================== -->
+
+        <main class="contenido-principal">
+
+
+            <!-- =================================================
+                 BARRA SUPERIOR
+                 ================================================= -->
+
+            <header class="barra-superior">
+
+                <div class="barra-superior-izquierda">
+
+                    <button
+                        type="button"
+                        id="botonMenu"
+                        class="boton-menu"
+                        aria-label="Abrir menú"
+                    >
+                        ☰
+                    </button>
+
+
+                    <div>
+
+                        <span class="miga-pan">
+                            Panel de trabajo
+                        </span>
+
+                        <h1 id="tituloSeccion">
+                            Inicio
+                        </h1>
+
+                    </div>
+
+                </div>
+
+
+                <div class="barra-superior-derecha">
+
+
+                    <!-- NOTIFICACIONES -->
+
+                    <button
+                        type="button"
+                        id="botonNotificaciones"
+                        class="boton-notificacion"
+                        aria-label="Notificaciones"
+                    >
+
+                        🔔
+
+                        <span
+                            id="contadorNotificaciones"
+                            class="badge-notificacion"
+                        >
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <!-- USUARIO -->
+
+                    <div class="usuario-superior">
+
+                        <div
+                            id="avatarSuperior"
+                            class="avatar avatar-pequeno"
+                        >
+                            D
+                        </div>
+
+                        <div class="usuario-superior-info">
+
+                            <strong id="nombreSuperior">
+                                Domiciliario
+                            </strong>
+
+                            <span>
+                                Domiciliario
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 ÁREA DE SECCIONES
+                 ================================================= -->
+
+            <div class="contenido-secciones">
+
+
+                <!-- =================================================
+                     SECCIÓN INICIO
+                     ================================================= -->
+
+                <section
+                    id="seccion-inicio"
+                    class="seccion activa"
+                >
+
+
+                    <!-- BIENVENIDA -->
+
+                    <div class="bienvenida">
+
+                        <div>
+
+                            <span class="etiqueta-seccion">
+                                HOY · OPERACIÓN EN TIEMPO REAL
+                            </span>
+
+                            <h2>
+                                ¡Hola,
+                                <span id="nombreBienvenida">
+                                    Domiciliario
+                                </span>
+                                !
+                                <span class="saludo-emoji">
+                                    👋
+                                </span>
+                            </h2>
+
+                            <p>
+                                Revisa tus entregas y continúa
+                                con tu ruta.
+                            </p>
+
+                        </div>
+
+
+                        <div class="estado-trabajo">
+
+                            <span>
+                                Estado de trabajo
+                            </span>
+
+                            <select
+                                id="selectEstadoTrabajo"
+                            >
+
+                                <option value="Disponible">
+                                    Disponible
+                                </option>
+
+                                <option value="En ruta">
+                                    En ruta
+                                </option>
+
+                                <option value="No disponible">
+                                    No disponible
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         TARJETAS DE ESTADÍSTICAS
+                         ================================================= -->
+
+                    <div class="estadisticas-panel">
+
+
+                        <article class="tarjeta-estadistica">
+
+                            <div class="icono-estadistica azul">
+                                📦
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Pedidos asignados
+                                </span>
+
+                                <strong id="pedidosAsignados">
+                                    0
+                                </strong>
+
+                                <small id="variacionPedidos">
+                                    Sin información
+                                </small>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="tarjeta-estadistica">
+
+                            <div class="icono-estadistica verde">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Entregas completadas
+                                </span>
+
+                                <strong id="entregasCompletadas">
+                                    0
+                                </strong>
+
+                                <small>
+                                    Entregas realizadas
+                                </small>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="tarjeta-estadistica">
+
+                            <div class="icono-estadistica naranja">
+                                ⏱
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Entregas pendientes
+                                </span>
+
+                                <strong id="entregasPendientes">
+                                    0
+                                </strong>
+
+                                <small>
+                                    Pendientes por entregar
+                                </small>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="tarjeta-estadistica">
+
+                            <div class="icono-estadistica morado">
+                                ★
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Cumplimiento
+                                </span>
+
+                                <strong id="indiceCumplimiento">
+                                    0%
+                                </strong>
+
+                                <small>
+                                    Índice de cumplimiento
+                                </small>
+
+                            </div>
+
+                        </article>
+
+
+                    </div>
+
+
+                    <!-- =================================================
+                         CONTENIDO INFERIOR
+                         ================================================= -->
+
+                    <div class="grid-inicio">
+
+
+                        <!-- PRÓXIMA ENTREGA -->
+
+                        <article class="tarjeta-panel tarjeta-proxima-entrega">
+
+                            <div class="cabecera-tarjeta">
+
+                                <div>
+
+                                    <span class="mini-titulo">
+                                        SIGUIENTE ENTREGA
+                                    </span>
+
+                                    <h3>
+                                        Próximo pedido
+                                    </h3>
+
+                                </div>
+
+                                <span
+                                    id="estadoPedidoPrincipal"
+                                    class="badge-estado pendiente"
+                                >
+                                    Pendiente
+                                </span>
+
+                            </div>
+
+
+                            <div
+                                id="pedidoPrincipal"
+                                class="pedido-principal"
+                            >
+
+                                <div class="pedido-vacio">
+
+                                    <span>
+                                        📦
+                                    </span>
+
+                                    <strong>
+                                        No tienes pedidos pendientes
+                                    </strong>
+
+                                    <p>
+                                        Cuando tengas un pedido asignado,
+                                        aparecerá aquí.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- RESUMEN DE RUTA -->
+
+                        <article class="tarjeta-panel">
+
+                            <div class="cabecera-tarjeta">
+
+                                <div>
+
+                                    <span class="mini-titulo">
+                                        OPERACIÓN
+                                    </span>
+
+                                    <h3>
+                                        Resumen de ruta
+                                    </h3>
+
+                                </div>
+
+                                <span class="icono-cabecera">
+                                    🚚
+                                </span>
+
+                            </div>
+
+
+                            <div class="resumen-ruta">
+
+                                <div class="dato-ruta">
+
+                                    <span class="dato-icono">
+                                        📍
+                                    </span>
+
+                                    <div>
+
+                                        <strong id="totalParadas">
+                                            0
+                                        </strong>
+
+                                        <span>
+                                            Paradas
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="dato-ruta">
+
+                                    <span class="dato-icono">
+                                        ⏱
+                                    </span>
+
+                                    <div>
+
+                                        <strong id="tiempoEstimado">
+                                            --:--
+                                        </strong>
+
+                                        <span>
+                                            Tiempo estimado
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="dato-ruta">
+
+                                    <span class="dato-icono">
+                                        📏
+                                    </span>
+
+                                    <div>
+
+                                        <strong id="distanciaRuta">
+                                            0 km
+                                        </strong>
+
+                                        <span>
+                                            Distancia
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="boton-principal boton-ver-ruta"
+                                data-seccion="ruta"
+                            >
+                                Ver mi ruta
+                            </button>
+
+                        </article>
+
+
+                    </div>
+
+
+                    <!-- =================================================
+                         ESTADO DEL SISTEMA
+                         ================================================= -->
+
+                    <div class="estado-sistema">
+
+                        <div class="estado-sistema-icono">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Sistema operativo
+                            </strong>
+
+                            <span>
+                                La información del panel se encuentra
+                                sincronizada.
+                            </span>
+
+                        </div>
+
+                        <span class="pulso-online"></span>
+
+                    </div>
+
+
+                </section>
+
+
+                <!-- =================================================
+                     SECCIÓN PEDIDOS
+                     ================================================= -->
+
+                <section
+                    id="seccion-pedidos"
+                    class="seccion"
+                >
+
+                    <div class="encabezado-seccion">
+
+                        <div>
+
+                            <span class="mini-titulo">
+                                OPERACIÓN
+                            </span>
+
+                            <h2>
+                                Mis pedidos
+                            </h2>
+
+                            <p>
+                                Consulta y gestiona los pedidos
+                                asignados a tu jornada.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="botonActualizarPedidos"
+                            class="boton-secundario"
+                        >
+                            ↻ Actualizar
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="listaPedidos"
+                        class="lista-pedidos"
+                    >
+                        <!-- Los pedidos se generan mediante JavaScript -->
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     SECCIÓN RUTA
+                     ================================================= -->
+
+                <section
+                    id="seccion-ruta"
+                    class="seccion"
+                >
+
+                    <div class="encabezado-seccion">
+
+                        <div>
+
+                            <span class="mini-titulo">
+                                OPERACIÓN
+                            </span>
+
+                            <h2>
+                                Mi ruta
+                            </h2>
+
+                            <p>
+                                Visualiza el recorrido y las
+                                próximas paradas.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="ruta-panel">
+
+
+                        <div class="ruta-resumen-superior">
+
+                            <div>
+
+                                <span>
+                                    Ruta de hoy
+                                </span>
+
+                                <strong id="rutaTitulo">
+                                    Sin ruta asignada
+                                </strong>
+
+                            </div>
+
+                            <span
+                                id="estadoRuta"
+                                class="badge-estado pendiente"
+                            >
+                                Sin iniciar
+                            </span>
+
+                        </div>
+
+
+                        <div class="mapa-simulacion">
+
+                            <div class="mapa-grid"></div>
+
+
+                            <div class="marcador marcador-origen">
+
+                                <span>
+                                    🏢
+                                </span>
+
+                                <small>
+                                    Centro
+                                </small>
+
+                            </div>
+
+
+                            <div class="linea-mapa"></div>
+
+
+                            <div class="marcador marcador-destino">
+
+                                <span>
+                                    📍
+                                </span>
+
+                                <small>
+                                    Destino
+                                </small>
+
+                            </div>
+
+
+                            <div class="vehiculo-mapa">
+                                🚚
+                            </div>
+
+                        </div>
+
+
+                        <div id="paradasRuta" class="paradas-ruta">
+
+                            <div class="parada">
+
+                                <span class="numero-parada">
+                                    1
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Centro logístico
+                                    </strong>
+
+                                    <span>
+                                        Punto de salida
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="parada">
+
+                                <span class="numero-parada">
+                                    2
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Próxima dirección
+                                    </strong>
+
+                                    <span>
+                                        Pendiente de asignación
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     SECCIÓN HISTORIAL
+                     ================================================= -->
+
+                <section
+                    id="seccion-historial"
+                    class="seccion"
+                >
+
+                    <div class="encabezado-seccion">
+
+                        <div>
+
+                            <span class="mini-titulo">
+                                ACTIVIDAD
+                            </span>
+
+                            <h2>
+                                Historial
+                            </h2>
+
+                            <p>
+                                Consulta las entregas realizadas.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="listaHistorial"
+                        class="tabla-contenedor"
+                    >
+
+                        <div class="tabla-vacia">
+
+                            <span>
+                                🕘
+                            </span>
+
+                            <strong>
+                                No hay entregas registradas
+                            </strong>
+
+                            <p>
+                                Cuando completes una entrega,
+                                aparecerá aquí.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     SECCIÓN PERFIL
+                     ================================================= -->
+
+                <section
+                    id="seccion-perfil"
+                    class="seccion"
+                >
+
+                    <div class="encabezado-seccion">
+
+                        <div>
+
+                            <span class="mini-titulo">
+                                MI CUENTA
+                            </span>
+
+                            <h2>
+                                Mi perfil
+                            </h2>
+
+                            <p>
+                                Consulta la información de tu cuenta.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="perfil-panel">
+
+
+                        <div class="perfil-panel-cabecera">
+
+                            <div
+                                id="avatarPerfil"
+                                class="avatar avatar-grande"
+                            >
+                                D
+                            </div>
+
+                            <div>
+
+                                <h3 id="nombrePerfil">
+                                    Domiciliario
+                                </h3>
+
+                                <span id="rolPerfil">
+                                    Domiciliario
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="datos-perfil">
+
+                            <div class="dato-perfil">
+
+                                <span>
+                                    Nombre completo
+                                </span>
+
+                                <strong id="datoNombre">
+                                    No disponible
+                                </strong>
+
+                            </div>
+
+
+                            <div class="dato-perfil">
+
+                                <span>
+                                    Usuario
+                                </span>
+
+                                <strong id="datoUsuario">
+                                    No disponible
+                                </strong>
+
+                            </div>
+
+
+                            <div class="dato-perfil">
+
+                                <span>
+                                    Correo electrónico
+                                </span>
+
+                                <strong id="datoCorreo">
+                                    No disponible
+                                </strong>
+
+                            </div>
+
+
+                            <div class="dato-perfil">
+
+                                <span>
+                                    Rol
+                                </span>
+
+                                <strong id="datoRol">
+                                    DOMICILIARIO
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+
+            <!-- =====================================================
+                 FOOTER
+                 ===================================================== -->
+
+            <footer class="footer-panel">
+
+                <span>
+                    © 2026 LogiSIS
+                </span>
+
+                <span>
+                    Sistema de Información para Empresas Logísticas
+                </span>
+
+            </footer>
+
+
+        </main>
+
+
+    </div>
+
+
+    <!-- =========================================================
+         PANEL DE NOTIFICACIONES
+         ========================================================= -->
+
+    <div
+        id="panelNotificaciones"
+        class="panel-notificaciones"
+    >
+
+        <div class="notificaciones-cabecera">
+
+            <div>
+
+                <strong>
+                    Notificaciones
+                </strong>
+
+                <span>
+                    Actividad reciente
+                </span>
+
+            </div>
+
+            <button
+                type="button"
+                id="cerrarNotificaciones"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            id="listaNotificaciones"
+            class="lista-notificaciones"
+        >
+
+            <div class="notificacion-vacia">
+
+                <span>
+                    🔔
+                </span>
+
+                <strong>
+                    No tienes notificaciones
+                </strong>
+
+                <p>
+                    Aquí aparecerán tus avisos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         CAPA PARA MÓVIL
+         ========================================================= -->
+
+    <div
+        id="overlayMenu"
+        class="overlay-menu"
+    ></div>
+
+
+    <div
+        id="modalPedido"
+        class="modal-fondo"
+        hidden
+    >
+
+        <div
+            class="modal-ventana"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalPedidoTitulo"
+        >
+
+            <div class="modal-cabecera">
+
+                <div>
+
+                    <span class="mini-titulo">
+                        DETALLE DEL PEDIDO
+                    </span>
+
+                    <h3 id="modalPedidoTitulo">
+                        Pedido
+                    </h3>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="cerrarModalPedido"
+                    class="modal-cerrar"
+                    aria-label="Cerrar"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <div
+                id="modalPedidoCuerpo"
+                class="modal-cuerpo"
+            ></div>
+
+            <div
+                id="modalPedidoAcciones"
+                class="modal-acciones"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="modalNovedad"
+        class="modal-fondo"
+        hidden
+    >
+
+        <form
+            id="formNovedad"
+            class="modal-ventana modal-estrecha"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalNovedadTitulo"
+        >
+
+            <div class="modal-cabecera">
+
+                <div>
+
+                    <span class="mini-titulo">
+                        INCIDENCIA
+                    </span>
+
+                    <h3 id="modalNovedadTitulo">
+                        Reportar novedad
+                    </h3>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="cerrarModalNovedad"
+                    class="modal-cerrar"
+                    aria-label="Cerrar"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <div class="modal-cuerpo">
+
+                <label
+                    for="textoNovedad"
+                    class="campo-etiqueta"
+                >
+                    Describe lo ocurrido
+                </label>
+
+                <textarea
+                    id="textoNovedad"
+                    class="campo-texto"
+                    rows="4"
+                    maxlength="300"
+                    placeholder="Ej: Cliente ausente, dirección incorrecta..."
+                    required
+                ></textarea>
+
+            </div>
+
+            <div class="modal-acciones">
+
+                <button
+                    type="button"
+                    id="cancelarNovedad"
+                    class="boton-secundario"
+                >
+                    Cancelar
+                </button>
+
+                <button
+                    type="submit"
+                    class="boton-peligro"
+                >
+                    Reportar novedad
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <strong id="toastTitulo"></strong>
+
+        <span id="toastMensaje"></span>
+
+    </div>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
+
+    <script src="js/domiciliario.js"></script>
+
+</body>
+
+</html>

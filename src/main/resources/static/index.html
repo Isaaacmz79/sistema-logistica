@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>LOGISIS | Soluciones Logísticas</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/principal.css"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         ENCABEZADO
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="navbar-contenedor">
+
+            <!-- LOGO -->
+
+            <a
+                href="/"
+                class="logo"
+            >
+                LOGISIS
+            </a>
+
+
+            <!-- NAVEGACIÓN -->
+
+            <nav class="menu-principal">
+
+                <a href="#inicio">
+                    Inicio
+                </a>
+
+                <a href="#rastreo">
+                    Rastreo
+                </a>
+
+                <a href="#servicios">
+                    Servicios
+                </a>
+
+                <a href="#nosotros">
+                    Nosotros
+                </a>
+
+                <a href="#contacto">
+                    Contacto
+                </a>
+
+            </nav>
+
+
+            <!-- ACCESO USUARIOS -->
+
+            <a
+                href="/login.html"
+                class="boton-acceso"
+            >
+
+                <span class="icono-usuario">
+                    👤
+                </span>
+
+                Acceso a usuarios
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO / RASTREO
+    ========================== -->
+
+    <main id="inicio">
+
+        <section
+            class="hero"
+            id="rastreo"
+        >
+
+            <div class="hero-contenido">
+
+                <div class="hero-texto">
+
+                    <span class="etiqueta-hero">
+                        SOLUCIONES LOGÍSTICAS
+                    </span>
+
+                    <h1>
+                        Conectamos tus envíos
+                        <span>
+                            con su destino
+                        </span>
+                    </h1>
+
+                    <p>
+                        Rastrea tus envíos de manera rápida,
+                        sencilla y segura desde cualquier lugar.
+                    </p>
+
+                </div>
+
+
+                <!-- =========================
+                     TARJETA DE RASTREO
+                ========================== -->
+
+                <div class="rastreo-card">
+
+                    <div class="rastreo-header">
+
+                        <div class="rastreo-icono">
+                            📦
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Rastrea tu envío
+                            </h2>
+
+                            <p>
+                                Consulta el estado de tu paquete
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        id="formRastreo"
+                        class="form-rastreo"
+                    >
+
+                        <label for="numeroGuia">
+                            Número de guía
+                        </label>
+
+                        <div class="campo-rastreo">
+
+                            <span>
+                                🔎
+                            </span>
+
+                            <input
+                                type="text"
+                                id="numeroGuia"
+                                name="numeroGuia"
+                                placeholder="Ingresa tu número de guía"
+                                autocomplete="off"
+                                required
+                            >
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="boton-rastrear"
+                        >
+
+                            Rastrear envío
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+                    </form>
+
+
+                    <div
+                        id="mensajeRastreo"
+                        class="mensaje-rastreo"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SERVICIOS
+        ========================== -->
+
+        <section
+            id="servicios"
+            class="seccion-informativa"
+        >
+
+            <div class="contenedor">
+
+                <span class="etiqueta-seccion">
+                    NUESTROS SERVICIOS
+                </span>
+
+                <h2>
+                    Soluciones para cada envío
+                </h2>
+
+                <p>
+                    Gestionamos cada etapa del proceso logístico
+                    para ofrecer una experiencia rápida,
+                    segura y confiable.
+                </p>
+
+
+                <div class="servicios-grid">
+
+                    <article class="servicio-card">
+
+                        <div class="servicio-icono">
+                            🚚
+                        </div>
+
+                        <h3>
+                            Domicilios
+                        </h3>
+
+                        <p>
+                            Entregas rápidas y seguras
+                            hasta el destino.
+                        </p>
+
+                    </article>
+
+
+                    <article class="servicio-card">
+
+                        <div class="servicio-icono">
+                            📦
+                        </div>
+
+                        <h3>
+                            Gestión de envíos
+                        </h3>
+
+                        <p>
+                            Control y seguimiento de
+                            cada paquete.
+                        </p>
+
+                    </article>
+
+
+                    <article class="servicio-card">
+
+                        <div class="servicio-icono">
+                            📍
+                        </div>
+
+                        <h3>
+                            Rastreo
+                        </h3>
+
+                        <p>
+                            Consulta el estado de tus
+                            envíos en tiempo real.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             NOSOTROS
+        ========================== -->
+
+        <section
+            id="nosotros"
+            class="seccion-nosotros"
+        >
+
+            <div class="contenedor nosotros-contenido">
+
+                <div>
+
+                    <span class="etiqueta-seccion">
+                        LOGISIS
+                    </span>
+
+                    <h2>
+                        Una nueva forma de gestionar
+                        la logística
+                    </h2>
+
+                </div>
+
+                <p>
+                    Nuestra plataforma conecta clientes,
+                    administradores y domiciliarios en un
+                    mismo ecosistema logístico.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer
+        id="contacto"
+        class="footer"
+    >
+
+        <div class="contenedor footer-contenido">
+
+            <div>
+
+                <div class="footer-logo">
+                    LOGISIS
+                </div>
+
+                <p>
+                    Soluciones logísticas inteligentes.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h4>
+                    Contacto
+                </h4>
+
+                <p>
+                    servicio@logisis.com
+                </p>
+
+                <p>
+                    +57 300 000 0000
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 LOGISIS.
+            Todos los derechos reservados.
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const formRastreo =
+            document.getElementById("formRastreo");
+
+        const numeroGuia =
+            document.getElementById("numeroGuia");
+
+        const mensajeRastreo =
+            document.getElementById("mensajeRastreo");
+
+
+        formRastreo.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                const guia =
+                    numeroGuia.value.trim();
+
+
+                if (!guia) {
+
+                    mensajeRastreo.textContent =
+                        "Ingresa un número de guía.";
+
+                    mensajeRastreo.className =
+                        "mensaje-rastreo error";
+
+                    return;
+
+                }
+
+
+                /*
+                 * TEMPORAL
+                 *
+                 * Más adelante conectaremos este
+                 * formulario con el backend para
+                 * consultar la guía en MongoDB.
+                 */
+
+                mensajeRastreo.textContent =
+                    "Estamos consultando la guía " +
+                    guia + "...";
+
+                mensajeRastreo.className =
+                    "mensaje-rastreo";
+
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

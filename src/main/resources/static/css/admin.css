@@ -1,0 +1,259 @@
+.contador-menu.contador-alerta {
+    background: #fb7185;
+    color: #ffffff;
+}
+
+.bienvenida .boton-nuevo,
+.encabezado-acciones .boton-nuevo {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.encabezado-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.badge-estado.creado {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.badge-estado.logistica {
+    background: #f3eeff;
+    color: #6d28d9;
+}
+
+.barra-filtros {
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.campo-buscar {
+    flex: 1 1 260px;
+    width: auto;
+}
+
+.campo-filtro {
+    flex: 0 1 210px;
+    width: auto;
+    cursor: pointer;
+}
+
+.campo-grid {
+    padding-top: 6px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 16px;
+}
+
+.campo-completo {
+    grid-column: 1 / -1;
+}
+
+.modal-ancha {
+    max-width: 640px;
+}
+
+.error-formulario {
+    margin: 14px 0 6px;
+    padding: 10px 12px;
+    border: 1px solid #fecdd3;
+    border-radius: 8px;
+    background: #fff1f2;
+    color: #be123c;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.ayuda-formulario {
+    margin-top: 12px;
+    color: var(--texto-secundario);
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+#obsOpcional {
+    color: var(--texto-suave);
+    font-weight: 500;
+}
+
+.campo-texto.invalido {
+    border-color: var(--rojo);
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.10);
+}
+
+select.campo-texto {
+    height: 42px;
+    background: #ffffff;
+}
+
+.boton-guardar {
+    margin: 0;
+}
+
+.celda-doble strong {
+    display: block;
+    color: var(--texto);
+    font-weight: 700;
+}
+
+.celda-doble span {
+    margin-top: 2px;
+    display: block;
+    color: var(--texto-secundario);
+    font-size: 9px;
+}
+
+.sin-asignar {
+    color: var(--texto-suave);
+    font-style: italic;
+}
+
+.acciones-fila {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+}
+
+.boton-mini.boton-borrar {
+    background: #fff1f2;
+    color: #be123c;
+}
+
+.boton-mini.boton-borrar:hover {
+    background: #ffe4e6;
+}
+
+.tabla-historial td.celda-acciones {
+    white-space: nowrap;
+}
+
+.lista-recientes {
+    padding: 6px 20px 18px;
+}
+
+.lista-recientes .fila-reciente {
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #edf0f4;
+    cursor: pointer;
+}
+
+.lista-recientes .fila-reciente:last-child {
+    border-bottom: none;
+}
+
+.fila-reciente > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.fila-reciente strong {
+    display: block;
+    color: var(--texto);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.fila-reciente span:not(.badge-estado) {
+    margin-top: 3px;
+    display: block;
+    overflow: hidden;
+    color: var(--texto-secundario);
+    font-size: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.vacio-lista {
+    padding: 28px 10px;
+    text-align: center;
+    color: var(--texto-secundario);
+    font-size: 11px;
+}
+
+.novedad-item {
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.novedad-item:last-child {
+    border-bottom: none;
+}
+
+.novedad-icono {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #fff1f2;
+    font-size: 16px;
+}
+
+.novedad-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.novedad-info strong {
+    display: block;
+    color: var(--texto);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.novedad-info span {
+    margin-top: 3px;
+    display: block;
+    color: var(--texto-secundario);
+    font-size: 10px;
+}
+
+.novedad-motivo {
+    margin-top: 10px;
+    padding: 10px 12px;
+    border-left: 3px solid #fb7185;
+    border-radius: 6px;
+    background: #fff7f8;
+    color: #9f1239;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.novedad-acciones {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.lista-pedidos > .vacio-lista {
+    padding: 50px 10px;
+}
+
+@media (max-width: 700px) {
+    .campo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .campo-filtro {
+        flex: 1 1 100%;
+    }
+
+    .bienvenida .boton-nuevo {
+        width: 100%;
+    }
+}

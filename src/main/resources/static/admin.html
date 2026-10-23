@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Panel de administración LogiSIS"
+    >
+
+    <title>LogiSIS - Panel del administrador</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/domiciliario.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/admin.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="app-domiciliario">
+
+        <aside
+            id="barraLateral"
+            class="barra-lateral"
+        >
+
+            <div class="logo-panel">
+
+                <div class="logo-texto">
+
+                    <span class="logo-logi">
+                        Logi
+                    </span>
+
+                    <span class="logo-sis">
+                        SIS
+                    </span>
+
+                </div>
+
+                <span class="logo-subtitulo">
+                    PANEL ADMINISTRADOR
+                </span>
+
+            </div>
+
+
+            <div class="perfil-sidebar">
+
+                <div
+                    id="avatarSidebar"
+                    class="avatar"
+                >
+                    A
+                </div>
+
+                <div class="perfil-info">
+
+                    <strong id="nombreSidebar">
+                        Administrador
+                    </strong>
+
+                    <span>
+                        Administrador
+                    </span>
+
+                </div>
+
+                <span
+                    class="estado-indicador"
+                    title="Sesión activa"
+                ></span>
+
+            </div>
+
+
+            <nav class="navegacion-panel">
+
+                <p class="titulo-menu">
+                    MENÚ PRINCIPAL
+                </p>
+
+                <button
+                    type="button"
+                    class="item-menu activo"
+                    data-seccion="inicio"
+                >
+
+                    <span class="icono-menu">
+                        🏠
+                    </span>
+
+                    <span>
+                        Inicio
+                    </span>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="item-menu"
+                    data-seccion="pedidos"
+                >
+
+                    <span class="icono-menu">
+                        📦
+                    </span>
+
+                    <span>
+                        Pedidos
+                    </span>
+
+                    <span
+                        id="contadorPedidosMenu"
+                        class="contador-menu"
+                    >
+                        0
+                    </span>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="item-menu"
+                    data-seccion="domiciliarios"
+                >
+
+                    <span class="icono-menu">
+                        🛵
+                    </span>
+
+                    <span>
+                        Domiciliarios
+                    </span>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="item-menu"
+                    data-seccion="novedades"
+                >
+
+                    <span class="icono-menu">
+                        ⚠️
+                    </span>
+
+                    <span>
+                        Novedades
+                    </span>
+
+                    <span
+                        id="contadorNovedadesMenu"
+                        class="contador-menu contador-alerta"
+                    >
+                        0
+                    </span>
+
+                </button>
+
+                <p class="titulo-menu titulo-menu-secundario">
+                    MI CUENTA
+                </p>
+
+                <button
+                    type="button"
+                    class="item-menu"
+                    data-seccion="perfil"
+                >
+
+                    <span class="icono-menu">
+                        👤
+                    </span>
+
+                    <span>
+                        Mi perfil
+                    </span>
+
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-inferior">
+
+                <button
+                    type="button"
+                    id="botonCerrarSesion"
+                    class="boton-cerrar"
+                >
+
+                    <span>
+                        ↪
+                    </span>
+
+                    Cerrar sesión
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <main class="contenido-principal">
+
+            <header class="barra-superior">
+
+                <div class="barra-superior-izquierda">
+
+                    <button
+                        type="button"
+                        id="botonMenu"
+                        class="boton-menu"
+                        aria-label="Abrir menú"
+                    >
+                        ☰
+                    </button>
+
+                    <div>
+
+                        <span class="miga-pan">
+                            Panel de administración
+                        </span>
+
+                        <h1 id="tituloSeccion">
+                            Inicio
+                        </h1>
+
+                    </div>
+
+                </div>
+
+                <div class="barra-superior-derecha">
+
+                    <div class="usuario-superior">
+
+                        <div
+                            id="avatarSuperior"
+                            class="avatar avatar-pequeno"
+                        >
+                            A
+                        </div>
+
+                        <div class="usuario-superior-info">
+
+                            <strong id="nombreSuperior">
+                                Administrador
+                            </strong>
+
+                            <span>
+                                Administrador
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <div class="contenido-secciones">
+
+                <section
+                    id="seccion-inicio"
+                    class="seccion activa"
+                >
+
+                    <div class="bienvenida">
+
+                        <div>
+
+                            <span class="etiqueta-seccion">
+                                RESUMEN DE LA OPERACIÓN
+                            </span>
+
+                            <h2>
+                                ¡Hola,
+                                <span id="nombreBienvenida">
+                                    Administrador
+                                </span>
+                                !
+                                <span class="saludo-emoji">
+                                    👋
+                                </span>
+                            </h2>
+
+                            <p>
+                                Revisa los pedidos, asígnalos y
+                                da seguimiento a cada entrega.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="boton-principal boton-nuevo"
+                            data-accion="nuevo"
+                        >
+                            + Crear pedido
+                        </button>
+
+                    </div>
+
+
+                    <div class="estadisticas-panel">
+
+                        <article class="tarjeta-estadistica">
+
+                            <div class="icono-estadistica azul">
+                                📦
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Pedidos totales
+                                </span>
+
+                                <strong id="statTotal">
+                                    0
+                                </strong>
+
+                                <small id="statSinAsignar">
+                                    Sin información
+                                </small>
+
+                            </div>
+
+                        </article>
+
+                        <article class="tarjeta-estadistica">
+
+                            <div class="icono-estadistica naranja">
+                                🚚
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    En proceso
+                                </span>
+
+                                <strong id="statProceso">
+                                    0
+                                </strong>
+
+                                <small>
+                                    Aún sin entregar
+                                </small>
+
+                            </div>
+
+                        </article>
+
+                        <article class="tarjeta-estadistica">
+
+                            <div class="icono-estadistica verde">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Entregados
+                                </span>
+
+                                <strong id="statEntregados">
+                                    0
+                                </strong>
+
+                                <small>
+                                    Entregas realizadas
+                                </small>
+
+                            </div>
+
+                        </article>
+
+                        <article class="tarjeta-estadistica">
+
+                            <div class="icono-estadistica morado">
+                                ⚠
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Con novedad
+                                </span>
+
+                                <strong id="statNovedades">
+                                    0
+                                </strong>
+
+                                <small>
+                                    Requieren atención
+                                </small>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <div class="grid-inicio">
+
+                        <article class="tarjeta-panel">
+
+                            <div class="cabecera-tarjeta">
+
+                                <div>
+
+                                    <span class="mini-titulo">
+                                        ACTIVIDAD
+                                    </span>
+
+                                    <h3>
+                                        Pedidos recientes
+                                    </h3>
+
+                                </div>
+
+                                <span class="icono-cabecera">
+                                    📦
+                                </span>
+
+                            </div>
+
+                            <div
+                                id="listaRecientes"
+                                class="lista-recientes"
+                            ></div>
+
+                        </article>
+
+                        <article class="tarjeta-panel">
+
+                            <div class="cabecera-tarjeta">
+
+                                <div>
+
+                                    <span class="mini-titulo">
+                                        POR ASIGNAR
+                                    </span>
+
+                                    <h3>
+                                        Sin domiciliario
+                                    </h3>
+
+                                </div>
+
+                                <span class="icono-cabecera">
+                                    🛵
+                                </span>
+
+                            </div>
+
+                            <div
+                                id="listaSinAsignar"
+                                class="lista-recientes"
+                            ></div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <section
+                    id="seccion-pedidos"
+                    class="seccion"
+                >
+
+                    <div class="encabezado-seccion">
+
+                        <div>
+
+                            <span class="mini-titulo">
+                                GESTIÓN
+                            </span>
+
+                            <h2>
+                                Pedidos
+                            </h2>
+
+                            <p>
+                                Crea, edita, asigna y da seguimiento
+                                a todos los pedidos.
+                            </p>
+
+                        </div>
+
+                        <div class="encabezado-acciones">
+
+                            <button
+                                type="button"
+                                id="botonActualizar"
+                                class="boton-secundario"
+                            >
+                                ↻ Actualizar
+                            </button>
+
+                            <button
+                                type="button"
+                                class="boton-principal boton-nuevo"
+                                data-accion="nuevo"
+                            >
+                                + Crear pedido
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="barra-filtros">
+
+                        <input
+                            type="search"
+                            id="buscarPedido"
+                            class="campo-texto campo-buscar"
+                            placeholder="Buscar por guía, destinatario o dirección"
+                            autocomplete="off"
+                        >
+
+                        <select
+                            id="filtroEstado"
+                            class="campo-texto campo-filtro"
+                        ></select>
+
+                        <select
+                            id="filtroAsignacion"
+                            class="campo-texto campo-filtro"
+                        >
+
+                            <option value="todos">
+                                Todas las asignaciones
+                            </option>
+
+                            <option value="sin">
+                                Sin domiciliario
+                            </option>
+
+                            <option value="con">
+                                Con domiciliario
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div
+                        id="tablaPedidos"
+                        class="tabla-contenedor"
+                    ></div>
+
+                </section>
+
+
+                <section
+                    id="seccion-domiciliarios"
+                    class="seccion"
+                >
+
+                    <div class="encabezado-seccion">
+
+                        <div>
+
+                            <span class="mini-titulo">
+                                EQUIPO
+                            </span>
+
+                            <h2>
+                                Domiciliarios
+                            </h2>
+
+                            <p>
+                                Usuarios registrados con rol de
+                                domiciliario y su carga de trabajo.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="tablaDomiciliarios"
+                        class="tabla-contenedor"
+                    ></div>
+
+                </section>
+
+
+                <section
+                    id="seccion-novedades"
+                    class="seccion"
+                >
+
+                    <div class="encabezado-seccion">
+
+                        <div>
+
+                            <span class="mini-titulo">
+                                SEGUIMIENTO
+                            </span>
+
+                            <h2>
+                                Novedades
+                            </h2>
+
+                            <p>
+                                Pedidos reportados con novedad por
+                                los domiciliarios.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="listaNovedades"
+                        class="lista-pedidos"
+                    ></div>
+
+                </section>
+
+
+                <section
+                    id="seccion-perfil"
+                    class="seccion"
+                >
+
+                    <div class="encabezado-seccion">
+
+                        <div>
+
+                            <span class="mini-titulo">
+                                MI CUENTA
+                            </span>
+
+                            <h2>
+                                Mi perfil
+                            </h2>
+
+                            <p>
+                                Consulta la información de tu cuenta.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="perfil-panel">
+
+                        <div class="perfil-panel-cabecera">
+
+                            <div
+                                id="avatarPerfil"
+                                class="avatar avatar-grande"
+                            >
+                                A
+                            </div>
+
+                            <div>
+
+                                <h3 id="nombrePerfil">
+                                    Administrador
+                                </h3>
+
+                                <span>
+                                    Administrador
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="datos-perfil">
+
+                            <div class="dato-perfil">
+
+                                <span>
+                                    Nombre completo
+                                </span>
+
+                                <strong id="datoNombre">
+                                    No disponible
+                                </strong>
+
+                            </div>
+
+                            <div class="dato-perfil">
+
+                                <span>
+                                    Usuario
+                                </span>
+
+                                <strong id="datoUsuario">
+                                    No disponible
+                                </strong>
+
+                            </div>
+
+                            <div class="dato-perfil">
+
+                                <span>
+                                    Correo electrónico
+                                </span>
+
+                                <strong id="datoCorreo">
+                                    No disponible
+                                </strong>
+
+                            </div>
+
+                            <div class="dato-perfil">
+
+                                <span>
+                                    Rol
+                                </span>
+
+                                <strong id="datoRol">
+                                    ADMINISTRADOR
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <footer class="footer-panel">
+
+                <span>
+                    © 2026 LogiSIS
+                </span>
+
+                <span>
+                    Sistema de Información para Empresas Logísticas
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <div
+        id="overlayMenu"
+        class="overlay-menu"
+    ></div>
+
+
+    <div
+        id="modalPedido"
+        class="modal-fondo"
+        hidden
+    >
+
+        <form
+            id="formPedido"
+            class="modal-ventana modal-ancha"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalPedidoTitulo"
+            novalidate
+        >
+
+            <div class="modal-cabecera">
+
+                <div>
+
+                    <span
+                        id="modalPedidoEtiqueta"
+                        class="mini-titulo"
+                    >
+                        NUEVO PEDIDO
+                    </span>
+
+                    <h3 id="modalPedidoTitulo">
+                        Crear pedido
+                    </h3>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-cerrar"
+                    data-accion="cerrar"
+                    aria-label="Cerrar"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <div class="modal-cuerpo">
+
+                <div class="campo-grid">
+
+                    <div class="campo">
+
+                        <label
+                            for="fRemitente"
+                            class="campo-etiqueta"
+                        >
+                            Remitente
+                        </label>
+
+                        <input
+                            id="fRemitente"
+                            class="campo-texto"
+                            type="text"
+                            maxlength="80"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label
+                            for="fDestinatario"
+                            class="campo-etiqueta"
+                        >
+                            Destinatario
+                        </label>
+
+                        <input
+                            id="fDestinatario"
+                            class="campo-texto"
+                            type="text"
+                            maxlength="80"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label
+                            for="fTelefono"
+                            class="campo-etiqueta"
+                        >
+                            Teléfono
+                        </label>
+
+                        <input
+                            id="fTelefono"
+                            class="campo-texto"
+                            type="tel"
+                            maxlength="20"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label
+                            for="fPrioridad"
+                            class="campo-etiqueta"
+                        >
+                            Prioridad
+                        </label>
+
+                        <select
+                            id="fPrioridad"
+                            class="campo-texto"
+                        >
+
+                            <option value="Normal">
+                                Normal
+                            </option>
+
+                            <option value="Alta">
+                                Alta
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="campo campo-completo">
+
+                        <label
+                            for="fDireccion"
+                            class="campo-etiqueta"
+                        >
+                            Dirección
+                        </label>
+
+                        <input
+                            id="fDireccion"
+                            class="campo-texto"
+                            type="text"
+                            maxlength="120"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label
+                            for="fCiudad"
+                            class="campo-etiqueta"
+                        >
+                            Ciudad
+                        </label>
+
+                        <input
+                            id="fCiudad"
+                            class="campo-texto"
+                            type="text"
+                            maxlength="60"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label
+                            for="fContenido"
+                            class="campo-etiqueta"
+                        >
+                            Contenido
+                        </label>
+
+                        <input
+                            id="fContenido"
+                            class="campo-texto"
+                            type="text"
+                            maxlength="120"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label
+                            for="fDistancia"
+                            class="campo-etiqueta"
+                        >
+                            Distancia (km)
+                        </label>
+
+                        <input
+                            id="fDistancia"
+                            class="campo-texto"
+                            type="number"
+                            min="0"
+                            step="0.1"
+                            value="0"
+                        >
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label
+                            for="fTiempo"
+                            class="campo-etiqueta"
+                        >
+                            Tiempo estimado (min)
+                        </label>
+
+                        <input
+                            id="fTiempo"
+                            class="campo-texto"
+                            type="number"
+                            min="0"
+                            step="1"
+                            value="0"
+                        >
+
+                    </div>
+
+                    <div
+                        id="campoDomiciliario"
+                        class="campo campo-completo"
+                    >
+
+                        <label
+                            for="fDomiciliario"
+                            class="campo-etiqueta"
+                        >
+                            Domiciliario (opcional)
+                        </label>
+
+                        <select
+                            id="fDomiciliario"
+                            class="campo-texto"
+                        ></select>
+
+                    </div>
+
+                </div>
+
+                <p
+                    id="errorFormulario"
+                    class="error-formulario"
+                    hidden
+                ></p>
+
+            </div>
+
+            <div class="modal-acciones">
+
+                <button
+                    type="button"
+                    class="boton-secundario"
+                    data-accion="cerrar"
+                >
+                    Cancelar
+                </button>
+
+                <button
+                    type="submit"
+                    id="botonGuardarPedido"
+                    class="boton-principal boton-guardar"
+                >
+                    Guardar pedido
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <div
+        id="modalDetalle"
+        class="modal-fondo"
+        hidden
+    >
+
+        <div
+            class="modal-ventana"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalDetalleTitulo"
+        >
+
+            <div class="modal-cabecera">
+
+                <div>
+
+                    <span class="mini-titulo">
+                        DETALLE DEL PEDIDO
+                    </span>
+
+                    <h3 id="modalDetalleTitulo">
+                        Pedido
+                    </h3>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-cerrar"
+                    data-accion="cerrar"
+                    aria-label="Cerrar"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <div
+                id="modalDetalleCuerpo"
+                class="modal-cuerpo"
+            ></div>
+
+            <div
+                id="modalDetalleAcciones"
+                class="modal-acciones"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="modalAsignar"
+        class="modal-fondo"
+        hidden
+    >
+
+        <form
+            id="formAsignar"
+            class="modal-ventana modal-estrecha"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalAsignarTitulo"
+        >
+
+            <div class="modal-cabecera">
+
+                <div>
+
+                    <span class="mini-titulo">
+                        ASIGNACIÓN
+                    </span>
+
+                    <h3 id="modalAsignarTitulo">
+                        Asignar domiciliario
+                    </h3>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-cerrar"
+                    data-accion="cerrar"
+                    aria-label="Cerrar"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <div class="modal-cuerpo">
+
+                <label
+                    for="selectAsignar"
+                    class="campo-etiqueta"
+                >
+                    Domiciliario
+                </label>
+
+                <select
+                    id="selectAsignar"
+                    class="campo-texto"
+                ></select>
+
+                <p class="ayuda-formulario">
+                    Al asignar, el pedido pasa a "En ciudad destino"
+                    y el domiciliario recibe un aviso.
+                </p>
+
+            </div>
+
+            <div class="modal-acciones">
+
+                <button
+                    type="button"
+                    class="boton-secundario"
+                    data-accion="cerrar"
+                >
+                    Cancelar
+                </button>
+
+                <button
+                    type="submit"
+                    class="boton-principal boton-guardar"
+                >
+                    Asignar
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <div
+        id="modalEstado"
+        class="modal-fondo"
+        hidden
+    >
+
+        <form
+            id="formEstado"
+            class="modal-ventana modal-estrecha"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalEstadoTitulo"
+        >
+
+            <div class="modal-cabecera">
+
+                <div>
+
+                    <span class="mini-titulo">
+                        SEGUIMIENTO
+                    </span>
+
+                    <h3 id="modalEstadoTitulo">
+                        Cambiar estado
+                    </h3>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-cerrar"
+                    data-accion="cerrar"
+                    aria-label="Cerrar"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <div class="modal-cuerpo">
+
+                <label
+                    for="selectEstado"
+                    class="campo-etiqueta"
+                >
+                    Nuevo estado
+                </label>
+
+                <select
+                    id="selectEstado"
+                    class="campo-texto"
+                ></select>
+
+                <label
+                    for="textoObservacion"
+                    class="campo-etiqueta"
+                >
+                    Observación
+                    <span id="obsOpcional">(opcional)</span>
+                </label>
+
+                <textarea
+                    id="textoObservacion"
+                    class="campo-texto"
+                    rows="3"
+                    maxlength="300"
+                    placeholder="Notas sobre el cambio de estado"
+                ></textarea>
+
+                <p
+                    id="errorEstado"
+                    class="error-formulario"
+                    hidden
+                ></p>
+
+            </div>
+
+            <div class="modal-acciones">
+
+                <button
+                    type="button"
+                    class="boton-secundario"
+                    data-accion="cerrar"
+                >
+                    Cancelar
+                </button>
+
+                <button
+                    type="submit"
+                    class="boton-principal boton-guardar"
+                >
+                    Actualizar estado
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <strong id="toastTitulo"></strong>
+
+        <span id="toastMensaje"></span>
+
+    </div>
+
+
+    <script src="js/admin.js"></script>
+
+</body>
+
+</html>

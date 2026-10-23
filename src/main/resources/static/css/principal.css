@@ -1,0 +1,907 @@
+/* =========================================================
+   LOGISIS - PÁGINA PRINCIPAL
+   principal.css
+   ========================================================= */
+
+/* =========================
+   RESET
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #102a43;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   CONTENEDOR GENERAL
+   ========================================================= */
+
+.contenedor {
+    width: min(1380px, 92%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e8edf2;
+
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.navbar-contenedor {
+    width: min(1450px, 94%);
+
+    min-height: 82px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 35px;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+
+    text-decoration: none;
+
+    font-size: 31px;
+    font-weight: 900;
+
+    letter-spacing: -1.5px;
+
+    color: #0b7285;
+
+    white-space: nowrap;
+}
+
+.logo::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 12px;
+    height: 12px;
+
+    margin-right: 8px;
+
+    border-radius: 50%;
+
+    background: #ffcc00;
+}
+
+
+/* =========================================================
+   MENÚ
+   ========================================================= */
+
+.menu-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 34px;
+
+    flex: 1;
+}
+
+.menu-principal a {
+    position: relative;
+
+    text-decoration: none;
+
+    color: #23384d;
+
+    font-size: 14px;
+    font-weight: 650;
+
+    transition:
+        color 0.2s ease;
+}
+
+.menu-principal a:hover {
+    color: #0b7285;
+}
+
+.menu-principal a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: #0b7285;
+
+    transition:
+        width 0.2s ease;
+}
+
+.menu-principal a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   BOTÓN ACCESO USUARIOS
+   ========================================================= */
+
+.boton-acceso {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 14px 24px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    color: #102a43;
+
+    background: #ffcc00;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 7px 18px rgba(255, 204, 0, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.boton-acceso:hover {
+    background: #ffd633;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(255, 204, 0, 0.35);
+}
+
+.icono-usuario {
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   HERO PRINCIPAL
+   ========================================================= */
+
+.hero {
+    min-height: calc(100vh - 82px);
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            120deg,
+            #082f49 0%,
+            #0b7285 48%,
+            #1c8c9d 100%
+        );
+}
+
+
+/* Decoración superior */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    right: -220px;
+    top: -220px;
+}
+
+
+/* Decoración inferior */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 204, 0, 0.08);
+
+    left: -220px;
+    bottom: -220px;
+}
+
+
+/* =========================================================
+   CONTENIDO HERO
+   ========================================================= */
+
+.hero-contenido {
+    width: min(1280px, 92%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.1fr)
+        minmax(430px, 0.9fr);
+
+    align-items: center;
+
+    gap: 90px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   TEXTO HERO
+   ========================================================= */
+
+.hero-texto {
+    color: #ffffff;
+}
+
+.etiqueta-hero {
+    display: inline-block;
+
+    margin-bottom: 22px;
+
+    padding: 9px 16px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.20);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.hero h1 {
+    max-width: 720px;
+
+    font-size: clamp(46px, 5vw, 76px);
+
+    line-height: 1.04;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 26px;
+}
+
+.hero h1 span {
+    color: #ffcc00;
+
+    display: block;
+}
+
+.hero-texto p {
+    max-width: 650px;
+
+    font-size: 18px;
+
+    line-height: 1.75;
+
+    color:
+        rgba(255, 255, 255, 0.84);
+}
+
+
+/* =========================================================
+   TARJETA DE RASTREO
+   ========================================================= */
+
+.rastreo-card {
+    background: #ffffff;
+
+    padding: 36px;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.25);
+
+    position: relative;
+}
+
+
+/* =========================================================
+   ENCABEZADO RASTREO
+   ========================================================= */
+
+.rastreo-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding-bottom: 25px;
+
+    margin-bottom: 26px;
+
+    border-bottom:
+        1px solid #e8edf2;
+}
+
+.rastreo-icono {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f7fa;
+
+    font-size: 27px;
+}
+
+.rastreo-header h2 {
+    font-size: 26px;
+
+    color: #102a43;
+
+    margin-bottom: 5px;
+}
+
+.rastreo-header p {
+    color: #718096;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FORMULARIO RASTREO
+   ========================================================= */
+
+.form-rastreo label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #334e68;
+}
+
+.campo-rastreo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border:
+        1px solid #d9e2ec;
+
+    border-radius: 12px;
+
+    padding: 0 15px;
+
+    height: 58px;
+
+    background: #f8fafc;
+
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.campo-rastreo:focus-within {
+    border-color: #0b7285;
+
+    box-shadow:
+        0 0 0 4px rgba(11, 114, 133, 0.10);
+
+    background: #ffffff;
+}
+
+.campo-rastreo span {
+    font-size: 19px;
+}
+
+.campo-rastreo input {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    color: #102a43;
+}
+
+.campo-rastreo input::placeholder {
+    color: #9aa8b5;
+}
+
+
+/* =========================================================
+   BOTÓN RASTREAR
+   ========================================================= */
+
+.boton-rastrear {
+    width: 100%;
+
+    margin-top: 18px;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #ffcc00;
+
+    color: #102a43;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.boton-rastrear:hover {
+    background: #ffd633;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(255, 204, 0, 0.35);
+}
+
+.boton-rastrear:active {
+    transform: translateY(0);
+}
+
+.boton-rastrear span {
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   MENSAJE RASTREO
+   ========================================================= */
+
+.mensaje-rastreo {
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #0b7285;
+}
+
+.mensaje-rastreo.error {
+    color: #d62828;
+}
+
+
+/* =========================================================
+   SECCIÓN INFORMATIVA
+   ========================================================= */
+
+.seccion-informativa {
+    padding: 100px 0;
+
+    background: #ffffff;
+
+    text-align: center;
+}
+
+.etiqueta-seccion {
+    color: #0b7285;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.seccion-informativa h2,
+.seccion-nosotros h2 {
+    margin-top: 12px;
+
+    margin-bottom: 16px;
+
+    font-size: 38px;
+
+    color: #102a43;
+}
+
+.seccion-informativa > .contenedor > p {
+    max-width: 700px;
+
+    margin: auto;
+
+    line-height: 1.7;
+
+    color: #627d98;
+}
+
+
+/* =========================================================
+   SERVICIOS
+   ========================================================= */
+
+.servicios-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 50px;
+
+    text-align: left;
+}
+
+.servicio-card {
+    padding: 32px;
+
+    border-radius: 18px;
+
+    background: #f8fafc;
+
+    border:
+        1px solid #e8edf2;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.servicio-icono {
+    font-size: 32px;
+
+    margin-bottom: 18px;
+}
+
+.servicio-card h3 {
+    margin-bottom: 10px;
+
+    color: #102a43;
+
+    font-size: 19px;
+}
+
+.servicio-card p {
+    color: #627d98;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   NOSOTROS
+   ========================================================= */
+
+.seccion-nosotros {
+    padding: 90px 0;
+
+    background: #eef7f8;
+}
+
+.nosotros-contenido {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+.nosotros-contenido p {
+    color: #526a7f;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    background: #082f49;
+
+    color: #ffffff;
+
+    padding-top: 55px;
+}
+
+.footer-contenido {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    padding-bottom: 45px;
+}
+
+.footer-logo {
+    font-size: 28px;
+
+    font-weight: 800;
+
+    color: #ffcc00;
+
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    font-size: 13px;
+
+    margin-top: 7px;
+}
+
+.footer h4 {
+    margin-bottom: 12px;
+}
+
+.footer-bottom {
+    border-top:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    padding: 20px;
+
+    text-align: center;
+
+    color:
+        rgba(255, 255, 255, 0.5);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .menu-principal {
+        gap: 18px;
+    }
+
+    .hero-contenido {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 70px 0;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-texto {
+        text-align: center;
+    }
+
+    .hero-texto p {
+        margin: auto;
+    }
+
+    .hero h1 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .rastreo-card {
+        width: min(650px, 100%);
+
+        margin: auto;
+    }
+
+    .servicios-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .nosotros-contenido {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .navbar-contenedor {
+        min-height: 72px;
+
+        flex-wrap: wrap;
+
+        padding: 12px 0;
+
+        gap: 15px;
+    }
+
+    .menu-principal {
+        order: 3;
+
+        width: 100%;
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        padding-bottom: 5px;
+    }
+
+    .boton-acceso {
+        margin-left: auto;
+    }
+
+    .servicios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .contenedor {
+        width: 90%;
+    }
+
+    .hero-contenido {
+        width: 90%;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .hero-texto p {
+        font-size: 16px;
+    }
+
+    .rastreo-card {
+        padding: 25px 20px;
+    }
+
+    .rastreo-header h2 {
+        font-size: 22px;
+    }
+
+    .rastreo-header p {
+        font-size: 12px;
+    }
+
+    .seccion-informativa h2,
+    .seccion-nosotros h2 {
+        font-size: 30px;
+    }
+
+    .footer-contenido {
+        flex-direction: column;
+    }
+}
